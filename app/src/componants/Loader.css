@@ -1,0 +1,30 @@
+:root{
+    --loaderBoxHeight: 2rem;
+    --loaderBoxWidth: 2rem;
+    --loaderTotalHeight: var(--loaderBoxHeight) * 7;
+}
+.loader{
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    color: white;
+    display: flex;
+}
+.box{
+    height: var(--loaderBoxHeight);
+    width: var(--loaderBoxWidth);
+    backGround-color: red;
+    border-radius: 50%;
+    animation-name: loader;
+    position: relative;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    animation-direction: alternate;
+    text-align: center;
+}
+
+@keyframes loader {
+    from {top: 50%; left: 0%;}
+    to {top: 50%; left: calc(100% - var(--loaderTotalHeight));}
+}
